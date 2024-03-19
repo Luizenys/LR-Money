@@ -14,6 +14,17 @@ export const HeaderContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        span {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
 `;
 
 export const NewTransactionButton = styled.button`
