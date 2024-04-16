@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { SearchForm } from "../../components/SearchForm";
 import { Summary } from "../../components/Summary";
 import { PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { priceFormatter, dateFormatter } from "../../utils/formatter";
+import { useContextSelector } from "use-context-selector";
 
 interface Transaction {
     id: number;
@@ -16,7 +16,7 @@ interface Transaction {
 }
 
 export function Transactions() {
-    const { transactions } = useContext(TransactionsContext)
+    const transactions = useContextSelector(TransactionsContext, (context) => {return context.transactions})
 
     return (
         <div>
